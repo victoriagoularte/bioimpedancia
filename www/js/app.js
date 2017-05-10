@@ -31,6 +31,12 @@ angular.module('bioimpedancia', ['ionic', 'bioimpedancia.controllers', 'bioimped
   // Each state's controller can be found in controllers.js
   $stateProvider
 
+  .state('bem-vindo', {
+    url: '/bem_vindo',
+    templateUrl: 'templates/bem-vindo.html',
+    controller: 'BemVindoController'
+  })
+
   .state('cadastro', {
     url: '/cadastro',
     templateUrl: 'templates/cadastro.html',
@@ -75,6 +81,6 @@ angular.module('bioimpedancia', ['ionic', 'bioimpedancia.controllers', 'bioimped
   });
 
   // if none of the above states are matched, use this as the fallback
-  $urlRouterProvider.otherwise('/cadastro');
+  $urlRouterProvider.otherwise('/bem_vindo');
 
 });

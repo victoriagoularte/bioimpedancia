@@ -1,5 +1,13 @@
 angular.module('bioimpedancia.controllers', [])
 
+.controller('BemVindoController', function($scope, $state) {
+
+  $scope.goToCadastrar = function() {
+    $state.go('cadastro');
+  }
+
+})
+
 .controller('CadastroController', function($scope, $state) {
 
   $scope.goToResultado = function() {

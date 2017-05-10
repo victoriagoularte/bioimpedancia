@@ -1,6 +1,36 @@
 /* index */
 
-.back-cadastro {
+.tam10 {
+    font-size: 10px;
+} .tam12 {
+    font-size: 12px;
+} .tam14 {
+    font-size: 14px;
+} .tam16 {
+    font-size: 16px;
+} .tam18 {
+    font-size: 18px;    
+} .tam20 {
+    font-size: 20px;
+} .tam22 {
+    font-size: 22px;
+} .tam24 {
+    font-size: 24px;
+} .tam26 {
+    font-size: 26px;
+} .tam28 {
+    font-size: 28px;
+}
+
+.font-regular {
+    color: white;
+}
+
+.text-center {
+    text-align: center;
+}
+
+.back-init {
     background-image: linear-gradient(to right, #696969, #808080);
 }
 

@@ -1,0 +1,40 @@
+/* bem-vindo */
+
+.bem-vindo-title {
+    margin-top: 30%;
+}
+
+.bem-vindo-sub {
+    margin-top: 30%;
+}
+
+.btn-bv-cadastrar {
+  text-align: center;
+  border: 2px solid white;
+  border-radius: 30px;
+  background: rgba(0, 0, 0, 0);
+  margin-left: 20%;
+  margin-right: 20%;
+  height: 40%;
+  width: 60%;
+}
+
+.btn-bv-entrar {
+  text-align: center;
+  background: rgba(0, 0, 0, 0);
+  margin-left: 20%;
+  margin-right: 20%;
+  margin-top: 5%;
+  height: 40%;
+  width: 60%;
+}
+
+.btn-abrir-conta {
+  margin: auto;
+  max-width: 97%;
+  max-height: 40%;
+}
+
+.bem-vindo-btns {
+    margin-top: 45%;
+}
