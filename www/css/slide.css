@@ -1,0 +1,63 @@
+/* slide */
+
+.bem-vindo-title {
+    margin-top: 30%;
+}
+
+.back-slide {
+    text-align: center;
+    height: 100%
+}
+
+.instrucao-slide {
+    padding: 15%;
+    margin-left: 10%;
+    margin-right: 10%
+}
+
+.imagem-logo-slide {
+    margin-top: 10%;
+    height: 192px;
+}
+
+.imagem-formulario-slide {
+    margin-top: 10%;
+    height: 190px;
+}
+
+.imagem-deitar-slide {
+    margin-top: 12%;
+    height: 190px;
+    width: 200px;
+}
+
+.imagem-eletrodo-slide {
+    margin-top: 18%;
+    height: 160px;
+}
+
+.imagem-click-slide {
+    margin-top: 13%;
+    height: 180px;
+}
+
+
+.slider-pager .slider-pager-page {
+    color: white;
+    margin-top: 5%;
+}
+
+.btn-avancar-slide {
+  text-align: center;
+  border: 2px solid white;
+  border-radius: 30px;
+  background: rgba(0, 0, 0, 0);
+  height: 50px;
+  width: 60%;
+  margin-left: 20%;
+}
+
+.avancar-btn-slide {
+    margin-top: 15%;
+}
+

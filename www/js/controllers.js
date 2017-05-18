@@ -3,15 +3,48 @@ angular.module('bioimpedancia.controllers', [])
 .controller('BemVindoController', function($scope, $state) {
 
   $scope.goToCadastrar = function() {
-    $state.go('cadastro');
+    $state.go('slide');
   }
 
 })
+
+.controller('FormularioController', function($scope, $state) {
+
+  $scope.goToCadastrar = function() {
+    $state.go('slide');
+  }
+
+})
+
 
 .controller('CadastroController', function($scope, $state) {
 
   $scope.goToResultado = function() {
     $state.go('tab.resultado');
+  }
+
+})
+
+.controller('SlideController', function($scope, $state, $ionicSlideBoxDelegate) {
+
+  $scope.goToResultado = function() {
+    $state.go('formulario');
+  }
+
+  $scope.goToAvancar = function() {
+    $ionicSlideBoxDelegate.next();
+  }
+
+  $scope.goToVamosComecar = function() {
+    $state.go('formulario');
+  }
+
+  $scope.backSlide = function() {
+    $ionicSlideBoxDelegate.previous();
+  }
+
+  $scope.slideChanged = function(index) {
+    $scope.slideIndex = index;
   }
 
 })
@@ -42,3 +75,5 @@ angular.module('bioimpedancia.controllers', [])
     enableFriends: true
   };
 });
+
+

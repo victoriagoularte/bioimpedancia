@@ -15,7 +15,7 @@
   background: rgba(0, 0, 0, 0);
   margin-left: 20%;
   margin-right: 20%;
-  height: 40%;
+  height: 50px;
   width: 60%;
 }
 
@@ -37,4 +37,8 @@
 
 .bem-vindo-btns {
     margin-top: 45%;
+}
+
+.bonito {
+    color: pink;
 }

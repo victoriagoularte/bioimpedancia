@@ -1,0 +1,81 @@
+<ion-content class="back-init">
+
+    <div class="row">
+            <div class="col text-left" ng-if="slideIndex > 0">
+                <button ng-click="backSlide()"><i class="icon ion-android-arrow-back font-regular tam22"></i></button>
+            </div>
+            <div class="col text-right">
+                <button ng-click="goToResultado()"><span class="font-regular tam18">pular</span></button>
+            </div> 
+        </div>
+    
+    <ion-slide-box class="back-slide tam16 font-regular" on-slide-changed="slideChanged(index)">
+
+        <ion-slide>
+            <div>
+                <img src="../img/icone-branco.png" class="imagem-logo-slide">
+            </div>    
+            <div class="instrucao-slide text-align ">  
+                <span class="tam16 font-regular">Bem-vindo ao nosso tutorial!</span>
+            </div>
+        </ion-slide>
+
+        <ion-slide>
+            <div>
+                <img src="/img/formulario-branco.png" class="imagem-formulario-slide">
+            </div>
+            <div class="instrucao-slide text-aling">  
+                <span class="tam16 font-regular">Preencha o formuládo do paciente.</span>
+            </div> 
+        </ion-slide>
+
+        <ion-slide>
+            <div>
+                <img src="/img/deitar-branco.png" class="imagem-deitar-slide">
+            </div>
+            <div class="instrucao-slide text-aling">  
+                <span class="tam16 font-regular">Deite o paciente em uma superfície plana</span>
+            </div> 
+        </ion-slide>
+
+        <ion-slide>
+            <div>
+                <img src="../img/eletrodos-branco2.png" class="imagem-eletrodo-slide">
+            </div>    
+            <div class="instrucao-slide text-aling">  
+                Cole os eletrodos na mão e pé direito para que possamos realizar a medição
+            </div>
+        </ion-slide>
+
+        <ion-slide>
+            <div>
+                <img src="../img/click-branco.png" class="imagem-click-slide">
+            </div>    
+            <div class="instrucao-slide text-aling">  
+                Clique em calcular!
+            </div>
+        </ion-slide>
+
+        <ion-slide>
+            <div>
+                <img src="../img/sorriso-branco.png" class="imagem-eletrodo-slide">
+            </div>    
+            <div class="instrucao-slide text-aling">  
+                Pronto, agora estamos aptos a realizar medições!
+            </div>
+        </ion-slide>
+        
+    </ion-slide-box>
+
+    <div class="avancar-btn-slide">
+    
+            <div ng-if="slideIndex != 5">
+                <button class="btn-avancar-slide" ng-click="goToAvancar()"><span class="font-regular">AVANÇAR</span></button>
+            </div>
+
+            <div ng-if="slideIndex == 5">
+                <button class="btn-avancar-slide" ng-click="goToVamosComecar()"><span class="font-regular">VAMOS COMEÇAR</span></button>
+            </div>
+    </div> 
+
+</ion-content>

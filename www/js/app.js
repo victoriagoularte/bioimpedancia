@@ -37,10 +37,22 @@ angular.module('bioimpedancia', ['ionic', 'bioimpedancia.controllers', 'bioimped
     controller: 'BemVindoController'
   })
 
+  .state('formulario', {
+    url: '/formulario',
+    templateUrl: 'templates/formulario.html',
+    controller: 'FormularioController'
+  })
+
   .state('cadastro', {
     url: '/cadastro',
     templateUrl: 'templates/cadastro.html',
     controller: 'CadastroController'
+  })
+
+  .state('slide', {
+    url: '/slide',
+    templateUrl: 'templates/slide.html',
+    controller: 'SlideController'
   })
 
   // setup an abstract state for the tabs directive
