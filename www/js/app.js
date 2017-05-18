@@ -48,6 +48,7 @@ angular.module('bioimpedancia', ['ionic', 'bioimpedancia.controllers', 'bioimped
     templateUrl: 'templates/cadastro.html',
     controller: 'CadastroController'
   })
+  
 
   .state('slide', {
     url: '/slide',
