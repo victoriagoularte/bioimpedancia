@@ -53,5 +53,5 @@
         <icon height="87" src="resources/ios/icon/icon-small@3x.png" width="87" />
     </platform>
     <icon src="resources/ios/icon/icon-small@3x.png" />
-    <engine name="android" spec="~6.2.3" />
+    <engine name="android" spec="^6.2.3" />
 </widget>

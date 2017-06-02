@@ -5,7 +5,9 @@ angular.module('bioimpedancia.controllers', [])
   $scope.goToCadastrar = function() {
     $state.go('slide');
   }
-
+  $scope.goToLogin = function() {
+    $state.go('login');
+  }
 })
 
 .controller('FormularioController', function($scope, $state) {
@@ -47,6 +49,21 @@ angular.module('bioimpedancia.controllers', [])
     $scope.slideIndex = index;
   }
 
+})
+
+.controller('LoginCtrl', function($scope, LoginService, $ionicPopup, $state) {
+    $scope.data = {};
+
+    $scope.login = function() {
+        LoginService.loginUser($scope.data.username, $scope.data.password).success(function(data) {
+            $state.go('tab.dash');
+        }).error(function(data) {
+            var alertPopup = $ionicPopup.alert({
+                title: 'Login failed!',
+                template: 'Please check your credentials!'
+            });
+        });
+    }
 })
 
 .controller('DashCtrl', function($scope) {})
