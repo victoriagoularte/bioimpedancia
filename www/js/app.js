@@ -98,7 +98,13 @@ angular.module('bioimpedancia', ['ionic', 'bioimpedancia.controllers', 'bioimped
         controller: 'AccountCtrl'
       }
     }
-  });
+  })
+
+  .state('login', {
+      url: '/login',
+      templateUrl: 'templates/login.html',
+      controller: 'LoginCtrl'
+  })
 
   // if none of the above states are matched, use this as the fallback
   $urlRouterProvider.otherwise('/bem_vindo');
