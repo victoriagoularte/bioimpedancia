@@ -26,6 +26,10 @@
     color: white;
 }
 
+.font-gray {
+    color: gray;
+}
+
 .text-center {
     text-align: center;
 }
@@ -72,4 +76,16 @@ ion-tabs.tabs-color-active-positive .tab-item {
 
 .text-uppercase {
     text-transform: uppercase;
+}
+
+input[type="email"] {
+    color: white;
+}
+
+input[type="number"] {
+    color: white;
+}
+
+input[type="password"] {
+    color: white;
 }

@@ -41,3 +41,24 @@ input::-webkit-input-placeholder {
     height: 50px;
     width: 60%;
 }
+
+.popup-login .popup {
+  background-color: white;
+  border-radius: 5px;
+}
+
+.popup-login .popup-title {
+  color: gray;
+  font-size: 14pt;
+}
+
+.popup-login .popup-head {
+  border: none;
+}
+
+.popup-login .popup-buttons .button {
+  background: gray;
+  border-radius: 30px;
+  color: white;
+  width: 80%;
+}

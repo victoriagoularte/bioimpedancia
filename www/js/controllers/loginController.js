@@ -8,8 +8,10 @@ angular.module('bioimpedancia.loginController', [])
             $state.go('tab.dash');
         }).error(function(data) {
             var alertPopup = $ionicPopup.alert({
-                title: 'Login failed!',
-                template: 'Please check your credentials!'
+                title: 'ATENÇÃO!',
+                cssClass: 'popup-login',
+                template: 'Verifique se login ou senha estão corretos.',
+                templateUrl: '../../templates/popup-login.html'
             });
         });
     }
