@@ -5,7 +5,7 @@
 // the 2nd parameter is an array of 'requires'
 // 'starter.services' is found in services.js
 // 'starter.controllers' is found in controllers.js
-angular.module('bioimpedancia', ['ionic', 'bioimpedancia.controllers', 'bioimpedancia.bemVindoController', 'bioimpedancia.formularioController', 'bioimpedancia.cadastroController', 'bioimpedancia.services'])
+angular.module('bioimpedancia', ['ionic', 'bioimpedancia.controllers', 'bioimpedancia.bemVindoController', 'bioimpedancia.formularioController', 'bioimpedancia.slideController', 'bioimpedancia.cadastroController', 'bioimpedancia.services'])
 
 .run(function($ionicPlatform) {
   $ionicPlatform.ready(function() {
@@ -97,7 +97,7 @@ angular.module('bioimpedancia', ['ionic', 'bioimpedancia.controllers', 'bioimped
   .state('login', {
       url: '/login',
       templateUrl: 'templates/login.html',
-      controller: 'LoginCotroller'
+      controller: 'LoginController'
   })
 
   // if none of the above states are matched, use this as the fallback
