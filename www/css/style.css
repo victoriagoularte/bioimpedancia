@@ -78,6 +78,10 @@ ion-tabs.tabs-color-active-positive .tab-item {
     text-transform: uppercase;
 }
 
+input[type="text"] {
+    color: white;
+}
+
 input[type="email"] {
     color: white;
 }

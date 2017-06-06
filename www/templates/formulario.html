@@ -1,78 +1,79 @@
 <ion-content class="back-init">
-    <div ng-controller="FormularioController">
-        <div class="text-center cadastro-title">
-            <span class="tam26 font-regular"> </span>
+    <div>
+
+        <div class="text-center dados-pessoais-div">
+            <label class="font-regular tam18 opacidade">DADOS PESSOAIS</label>
         </div>
+
         <form name="formulario-paciente" ng-submit="">
-            <div class="text-center">
-                <label class="font-regular tam20 opacidade">Dados Pessoais</label>
+            
+            <div class="margin-top2-formulario">
+                <div class="label-cadastrar-formulario">
+                    <span class=" font-regular tam16 opacidade label-form">CPF</span>
+                    <input type="number" class="input-cadastrar-formulario" placeholder="ex: 022.119.050-30" ng-model="dadosPessoais.cpf"/>
+                </div>
             </div>
 
-            <div class="list">
-                <div class="margin-top2-formulario">
-                    <label class="">
-                        <span class="label-cadastrar-formulario font-regular tam16 opacidade">CPF:</span>
-                        <input type="number" class="input-cadastrar-formulario" placeholder="CPF do paciente" ng-model="dadosPessoais.cpf"/>
-                    </label>
+            <div class="margin-top2-formulario">
+                <div class="label-cadastrar-formulario">
+                    <span class="label-form font-regular tam16 opacidade">Nome</span>
+                    <input type="text" class="input-cadastrar-formulario" placeholder="ex: Maria Souza Silva" ng-model="dadosPessoais.nome"></input>
                 </div>
-                <div class="margin-top2-formulario">
-                    <label class="">
-                        <span class="label-cadastrar-formulario font-regular tam16 opacidade">Nome:</span>
-                        <input type="text" class="input-cadastrar-formulario" placeholder="Nome do paciente" ng-model="dadosPessoais.nome"></input>
-                    </label>
-                </div>
+            </div>
             
         </form>
 
-        <form name="formulario-paciente" class="margin-top10-formulario" ng-submit="">
-            <div class="text-center">
-                <label class="font-regular tam20 opacidade">Informações</label>
-            </div>
+        <div class="text-center dados-pessoais-div">
+            <label class="font-regular tam18 opacidade">INFORMAÇÕES</label>
+        </div>
 
-            <div class="list">
-                <div class="margin-top2-formulario">
-                    <label class="">
-                        <span class="label-cadastrar-formulario font-regular tam16 opacidade">Altura:</span>          
-                        <input type="number" class="input-cadastrar-formulario" placeholder="Altura do paciente" ng-model="informacoes.altura"/>
-                    </label>
-                </div>
+        <form name="formulario-paciente" class="margin-top2-formulario" ng-submit="">
+
             
             <div class="margin-top2-formulario">
-                    <label class="">
-                        <span class="label-cadastrar-formulario font-regular tam16 opacidade">Peso:</span>          
-                        <input type="number" class="input-cadastrar-formulario" placeholder="Peso do paciente" ng-model="informacoes.peso"/>
-                    </label>
-                </div>
-                
-                <div class="margin-top2-formulario">
-                    <label class="">
-                        <span class="label-cadastrar-formulario font-regular tam16 opacidade">Idade:</span>          
-                        <input type="number" class="input-cadastrar-formulario" placeholder="Idade do paciente" ng-model="informacoes.idade"/>
-                    </label>
+                <div class="label-cadastrar-formulario">
+                    <span class="label-form font-regular tam16 opacidade">Altura</span>          
+                    <input type="number" class="input-cadastrar-formulario" placeholder="ex: 180cm" ng-model="informacoes.altura"/>
                 </div>
             </div>
+            
+            <div class="margin-top2-formulario">
+                <div class="label-cadastrar-formulario">
+                    <span class="label-form font-regular tam16 opacidade">Peso</span>          
+                    <input type="number" class="input-cadastrar-formulario" placeholder="ex: 50kg" ng-model="informacoes.peso"/>
+                </div>
+            </div>
+                
+            <div class="margin-top2-formulario">
+                <div class="label-cadastrar-formulario">
+                    <span class="label-form font-regular tam16 opacidade">Idade</span>          
+                    <input type="number" class="input-cadastrar-formulario" placeholder="18 anos" ng-model="informacoes.idade"/>
+                </div>
+            </div>
+            
 
-                <div class="margin-top2-formulario col col-60">
+            
+                <div class="margin-top2-formulario col col-60" style="margin-left: 15%;">
                     <label class = "item item-input item-select ">
                         <div class = "input-label ">
                             <span class="margin-left30 font-regular tam16 opacidade">Sexo:</span>
                         </div>
                             
-                        <select class="opacidade" ng-model="sexo" ng-change="alterouSexo()" ng-options="sexo as sexo.tipo for sexo in sexos track by sexo.id">
+                        <select  ng-model="sexo" ng-change="alterouSexo()" ng-options="sexo as sexo.tipo for sexo in sexos track by sexo.id">
                         </select>
                     </label>
                 </div>
-                
+            
 
-                <div class="margin-top2-formulario">
-                    <li class="item item-checkbox checkbox-dark checkbox-formulario opacidade ">
-                        <span class="font-regular tam16 opacidade">Ingeriu água</span>
-                        <label class="checkbox">
-                            <input type="checkbox" ng-model="informacoes.agua">
-                        </label>
-                    </li>
-                </div>
+            <div class="margin-top2-formulario">
+                <li class="item item-checkbox checkbox-dark checkbox-formulario opacidade ">
+                    <span class="font-regular tam16 opacidade">Ingeriu água</span>
+                    <label class="checkbox">
+                        <input type="checkbox" ng-model="informacoes.agua">
+                    </label>
+                </li>
             </div>
+            
 
             <div class="opacidade">
                 <button type="submit" class="btn-cadastrar-formulario" ng-click="goToCadastrar()"><span class="text-center font-regular tam18">CADASTRAR</span></button>
