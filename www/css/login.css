@@ -1,0 +1,43 @@
+.login-title { 
+    margin-top: 30%;
+    margin-bottom: 10%;
+}
+.margin-top10-login{
+    margin-top: 10%; 
+}
+.margin-top5-login{
+    margin-top: 5%; 
+}
+.label-login {
+    margin-left: 10%; 
+}
+
+.input-login {
+  text-align: center;
+  border-radius: 30px;
+  opacity: 0.7;
+  background-color: #8c8c8c;
+  color: white;  
+  height: 80%;
+  width: 80%;
+  margin-left: 10%;
+}
+
+input::-webkit-input-placeholder {
+    color: white !important;
+}
+
+[input='text'].input-form {
+    background-color: transparent;
+}
+
+.btn-login {
+    text-align: center;
+    border: 2px solid white;
+    border-radius: 30px;
+    background: rgba(0, 0, 0, 0);
+    margin-left: 20%;
+    margin-right: 20%;
+    height: 50px;
+    width: 60%;
+}

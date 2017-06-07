@@ -69,3 +69,7 @@ ion-tabs.tabs-color-active-positive .tab-item.tab-item-active, ion-tabs.tabs-col
 ion-tabs.tabs-color-active-positive .tab-item {
     color: white;
 }
+
+.text-uppercase {
+    text-transform: uppercase;
+}
