@@ -1,45 +1,55 @@
 angular.module('bioimpedancia.bemVindoController', [])
 
-.controller('BemVindoController', function($scope, $state, $http) {
+  .controller('BemVindoController', function ($scope, $state, $http) {
 
-  const URI = 'http://homol.redes.unb.br/uiot-raise/'
-  const CLIENT_REGISTER = '/client/register/'
+    const URI = 'http://homol.redes.unb.br/uiot-raise/';
+    const CLIENT_REGISTER = 'client/register/';
+    const SERVICE_LIST = 'service/list/';
 
-  $scope.$on('$ionicView.loaded', function () {
-    checkRaise();
-  });
+    $scope.tokenId = "";
 
-  $scope.goToCadastrar = function() {
-    $state.go('slide');
-  }
-  
-  $scope.goToLogin = function() {
-    $state.go('login');
-  }
+    $scope.$on('$ionicView.loaded', function () {
+      $scope.raiseClientRegister();
+    });
 
-  function checkRaise() {
-    $http({
-        method : "POST",
-        url : URI + CLIENT_REGISTER,
-        headers: {
-          "name": "",
-          "chipset": "",
+    $scope.goToCadastrar = function () {
+      $state.go('slide');
+    }
+
+    $scope.goToLogin = function () {
+      $state.go('login');
+    }
+
+    $scope.raiseClientRegister = function () {
+      $http.post(URI + CLIENT_REGISTER, {
+          "name": "BIA-App",
+          "chipset": "Apple A10 Fusion",
           "mac": "00:db:df:07:6d:13",
-          "serial": "",
-          "processor": "",
-          "channel": "",
-          "client_time": 0,
+          "serial": "X0XX0X00X0X0",
+          "processor": "Arm A10",
+          "channel": "Wi-Fi",
+          "client_time": 1315584200,
           "tag": [
-            
+
           ]
         }
-    }).then(function mySuccess(response) {
-        $scope.raiseResponse = response.data;
-        console.log($scope.raiseResponse)
-    }, function myError(response) {
-        $scope.raiseResponse = response.statusText;
-        console.log($scope.raiseResponse)
-    });
-  }
+      ).success(function mySuccess(response) {
+        $scope.raiseResponse = response.message;
+        console.log($scope.raiseResponse);
+        $scope.tokenId = response.tokenId;
+        $scope.raiseServiceList();
+      }).error( function myError(data, status) {
+        $scope.raiseResponse = data;
+        console.log($scope.raiseResponse);
+      });
+    };
 
-})
+    $scope.raiseServiceList = function () {
+      // param service_name not working
+      $http.get(URI + SERVICE_LIST + '?tokenId=' + $scope.tokenId)
+        .success(function (response){
+          $scope.raiseResponse = response;
+        });
+    };
+
+  })
