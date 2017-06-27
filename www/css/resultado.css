@@ -1,0 +1,14 @@
+.resultado-title { 
+    margin-top: 10%;
+    margin-bottom: 10%;
+}
+
+#chart1 {
+  top: 10%;
+  position: relative;
+}
+
+.ct-series-a .ct-line,
+.ct-series-a .ct-point{
+  stroke: #ffffff !important;
+}
