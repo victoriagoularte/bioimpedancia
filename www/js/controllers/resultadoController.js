@@ -18,7 +18,7 @@ angular.module('bioimpedancia.resultadoController', [])
     var chart = new Chartist.Line('.ct-chart', {
         labels: ['1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11', '12'],
         series: [
-          [10, 6, 7, 8, 5, 4, 6, 2, 3, 3, 4, 6]
+          [543.04, 574.23, 619.06, 585.43, 592.04, 577.66, 571.31, 587.93, 559.35, 546.42, 603.27, 607.25]
         ]
       }, {
         height: 235,
