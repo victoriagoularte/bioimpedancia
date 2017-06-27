@@ -5,7 +5,7 @@ angular.module('bioimpedancia.loginController', [])
 
     $scope.login = function(name, pw) {
         LoginService.loginUser(name, pw).success(function(data) {
-            $state.go('tab.dash');
+            $state.go('tab.resultado');
         }).error(function(data) {
             var alertPopup = $ionicPopup.alert({
                 title: 'ATENÇÃO!',
