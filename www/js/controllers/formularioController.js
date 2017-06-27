@@ -1,6 +1,6 @@
 angular.module('bioimpedancia.formularioController', [])
 
-.controller('FormularioController', function($scope, $state) {
+.controller('FormularioController', function($scope, $state, $location, resultadoService) {
 
   $scope.sexos = [{id: '0', tipo: 'Feminino'}, {id: '1', tipo: 'Masculino'}];
   $scope.sexo = $scope.sexos[1];
@@ -28,6 +28,10 @@ angular.module('bioimpedancia.formularioController', [])
     var bodyDensity = 1.1554 - (0.0841 * $scope.informacoes.peso * (resistencia/($scope.informacoes.altura * $scope.informacoes.altura)));
     var fatMass = ((4.95/(bodyDensity - 4.5))) * 100;
     var ffm = $scope.informacoes.peso - fatMass;
+
+    resultadoService.dataObj.bodyDensity = bodyDensity;
+    resultadoService.dataObj.fatMass = fatMass;
+    resultadoService.dataObj.ffm = ffm;
 
     console.log(bodyDensity);
     console.log(fatMass);

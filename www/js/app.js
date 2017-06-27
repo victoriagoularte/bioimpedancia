@@ -8,7 +8,7 @@
 angular.module('bioimpedancia', 
 ['ionic', 'bioimpedancia.controllers', 'bioimpedancia.bemVindoController',
  'bioimpedancia.formularioController', 'bioimpedancia.slideController', 'bioimpedancia.cadastroController',
- 'bioimpedancia.loginController', 'bioimpedancia.services'])
+ 'bioimpedancia.loginController', 'bioimpedancia.resultadoController', 'bioimpedancia.services'])
 
   .run(function ($ionicPlatform) {
     $ionicPlatform.ready(function () {
@@ -23,8 +23,16 @@ angular.module('bioimpedancia',
         // org.apache.cordova.statusbar required
         StatusBar.styleDefault();
       }
-    });
+    })
+
   })
+
+  .factory('resultadoService', function() {
+      var data = {};
+      return {
+        dataObj: data
+      };
+    })
 
   .config(function ($stateProvider, $urlRouterProvider, $httpProvider) {
 
@@ -70,7 +78,7 @@ angular.module('bioimpedancia',
         views: {
           'tab-resultado': {
             templateUrl: 'templates/resultado.html',
-            controller: 'DashCtrl'
+            controller: 'ResultadoController'
           }
         }
       })
