@@ -12,8 +12,8 @@ angular.module('bioimpedancia.resultadoController', [])
 
     var responsiveOptions = [
     ['screen and (max-width: 640px)', {
-        height: 235,
-        width: 300,
+        height: 550,
+        width: 260,
         showArea: false,
         axisX: {
         showLabel: false,

@@ -2,17 +2,16 @@
 .title-card {
     font-weight: 500;
 }
-.resultado-title { 
-    margin-top: 10%;
-    margin-bottom: 10%;
-}
 
 #chart1 {
-  top: 10%;
-  position: relative;
+    margin-left: -15px;
 }
 
 .ct-series-a .ct-line,
 .ct-series-a .ct-point{
-  stroke: #ffffff !important;
+  stroke: #444 !important;
+}
+
+#card-chart {
+    height: 250px;
 }
