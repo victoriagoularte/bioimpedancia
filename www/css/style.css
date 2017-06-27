@@ -79,17 +79,17 @@ ion-tabs.tabs-color-active-positive .tab-item {
 }
 
 input[type="text"] {
-    color: white;
+    color: black;
 }
 
 input[type="email"] {
-    color: white;
+    color: black;
 }
 
 input[type="number"] {
-    color: white;
+    color: black;
 }
 
 input[type="password"] {
-    color: white;
+    color: black;
 }

@@ -88,7 +88,7 @@ angular.module('bioimpedancia',
         views: {
           'tab-sobre': {
             templateUrl: 'templates/sobre.html',
-            controller: 'SobreCtrl'
+            controller: 'SobreController'
           }
         }
       })
