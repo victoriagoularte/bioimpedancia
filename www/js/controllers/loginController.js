@@ -1,11 +1,11 @@
 angular.module('bioimpedancia.loginController', [])
 
 .controller('LoginController', function($scope, LoginService, $ionicPopup, $state) {
-    $scope.data = {};
+    $scope.data = {username: "", password: ""};
 
-    $scope.login = function() {
-        LoginService.loginUser($scope.data.username, $scope.data.password).success(function(data) {
-            $state.go('tab.dash');
+    $scope.login = function(name, pw) {
+        LoginService.loginUser(name, pw).success(function(data) {
+            $state.go('tab.resultado');
         }).error(function(data) {
             var alertPopup = $ionicPopup.alert({
                 title: 'ATENÇÃO!',
