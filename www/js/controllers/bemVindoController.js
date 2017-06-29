@@ -53,16 +53,34 @@ angular.module('bioimpedancia.bemVindoController', [])
           angular.forEach($scope.raiseResponse.values, function (elem, index) {
             var services = [];
             var getService;
-            if (elem.services != null) {
+            if (elem.services !== null) {
               services = elem.services;
               getService = services.filter((service) => service.name === "GValues_M")[0];
-              if(getService != null){
+              if (getService !== null) {
                 $scope.list.push(getService);
               }
             }
           });
-          $scope.service = $scope.list.sort(function (a, b) { return b.service_id - a.service_id; })[0];
+          $scope.service = $scope.list.sort(function (a, b) {
+            return b.service_id - a.service_id;
+          })[0];
+          $scope.raiseDataList();
         });
     };
 
+    $scope.raiseDataList = function () {
+      var service_id = $scope.service.service_id;
+      $scope.data_list = [];
+      $http.get(URI + DATA_LIST + '?tokenId=' + $scope.tokenId + '&service_id=' + service_id)
+        .success(function (response) {
+          $scope.raiseResponse = response;
+          angular.forEach($scope.raiseResponse.values, function (elem, index) {
+            var data_values = [];
+            if(elem.data_values !== null) {
+              data_values = elem.data_values;
+              $scope.data_list.push(data_values);
+            }
+          });
+        })
+    }
   })
