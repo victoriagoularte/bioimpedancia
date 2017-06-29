@@ -37,7 +37,7 @@ angular.module('bioimpedancia.bemVindoController', [])
         $scope.raiseResponse = response.message;
         console.log($scope.raiseResponse);
         $scope.tokenId = response.tokenId;
-        $scope.raiseServiceList();
+        $scope.raiseDataList();
       }).error(function myError(data, status) {
         $scope.raiseResponse = data;
         console.log($scope.raiseResponse);
@@ -53,9 +53,9 @@ angular.module('bioimpedancia.bemVindoController', [])
           angular.forEach($scope.raiseResponse.values, function (elem, index) {
             var services = [];
             var getService;
-            if (elem.services !== null) {
+            if (elem.services !== null && elem.services !== undefined ) {
               services = elem.services;
-              getService = services.filter((service) => service.name === "GValues_M")[0];
+              getService = services.filter((service) => service.name === "ValorMedio_Impedancia")[0];
               if (getService !== null) {
                 $scope.list.push(getService);
               }
@@ -69,18 +69,21 @@ angular.module('bioimpedancia.bemVindoController', [])
     };
 
     $scope.raiseDataList = function () {
-      var service_id = $scope.service.service_id;
+      //var service_id = $scope.service.service_id;
       $scope.data_list = [];
-      $http.get(URI + DATA_LIST + '?tokenId=' + $scope.tokenId + '&service_id=' + service_id)
+      $http.get(URI + DATA_LIST + '?tokenId=' + $scope.tokenId + '&service_id=3735')
         .success(function (response) {
           $scope.raiseResponse = response;
           angular.forEach($scope.raiseResponse.values, function (elem, index) {
             var data_values = [];
-            if(elem.data_values !== null) {
+            if(elem.data_values !== null && elem.data_values !== undefined) {
               data_values = elem.data_values;
-              $scope.data_list.push(data_values);
+              if(data_values.valor !== null && data_values.valor !== undefined) {
+                $scope.data_list.push(data_values.valor);
+              }
             }
           });
+          console.log($scope.data_list);
         })
     }
   })
