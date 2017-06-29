@@ -52,10 +52,10 @@
         <div class="text-center" style="margin-top: 10%;" >
           A partir dos resultados acima, o cliente possui um estado:
            <div class="text-center" style="margin-top:5%;">
-             <span class="tam16" ng-if="ffm > 30">SOBREPESO</span>
+             <span class="tam16" ng-if="sobrepeso">SOBREPESO</span>
            </div>
            <div class="text-center" style="margin-top:5%;">
-             <span class="tam16" ng-if="ffm < 30">IDEAL</span>
+             <span class="tam16" ng-if="!sobrepeso">IDEAL</span>
            </div>  
         </div>         
       </div>
@@ -70,6 +70,10 @@
           <div class="ct-chart" id="chart1"></div>
         </div>     
       </div>
+    </div>
+
+    <div>
+      <button class="btn-novo-exame" ng-click="goToFormulario()"><span class="font-regular">NOVO EXAME</span></button>
     </div>
 
   </ion-content>

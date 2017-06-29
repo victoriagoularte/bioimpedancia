@@ -1,6 +1,6 @@
 angular.module('bioimpedancia.formularioController', [])
 
-.controller('FormularioController', function($scope, $state, $location, resultadoService) {
+.controller('FormularioController', function($scope, $state, $location, $ionicPopup, resultadoService) {
 
   $scope.sexos = [{id: '0', tipo: 'Feminino'}, {id: '1', tipo: 'Masculino'}];
   $scope.sexo = $scope.sexos[1];
@@ -12,13 +12,27 @@ angular.module('bioimpedancia.formularioController', [])
   }
 
   $scope.goToCadastrar = function() {
-    if($scope.sexo.id == 0) {
-      calculoFem();
-    } else if($scope.sexo.id == 1) {
-      calculoMasc();
-    } 
+
+    if(!$scope.informacoes.altura || !$scope.informacoes.peso || !$scope.informacoes.idade) {
+
+      var alertPopup = $ionicPopup.alert({
+          title: 'ATENÇÃO!',
+          cssClass: 'popup-login',
+          template: '<p class="font-gray text-center tam16">Verifique se os campos foram preenchidos corretamente.</p>',
+      });
+
+    } else {
+      
+      if($scope.sexo.id == 0) {
+        calculoFem();
+      } else if($scope.sexo.id == 1) {
+        calculoMasc();
+      } 
     
-    $state.go('tab.resultado');
+      $state.go('tab.resultado');
+    }
+
+    
   }
 
   $scope.alterouSexo = function() {
@@ -37,6 +51,7 @@ angular.module('bioimpedancia.formularioController', [])
     resultadoService.dataObj.bodyDensity = bodyDensity;
     resultadoService.dataObj.fatMass = fatMass;
     resultadoService.dataObj.ffm = ffm;
+    resultadoService.dataObj.sobrepeso = (ffm > 26) ? true : false;
 
     console.log(bodyDensity);
     console.log(fatMass);
@@ -56,11 +71,11 @@ angular.module('bioimpedancia.formularioController', [])
     resultadoService.dataObj.bodyDensity = bodyDensity;
     resultadoService.dataObj.fatMass = fatMass;
     resultadoService.dataObj.ffm = ffm;
+    resultadoService.dataObj.sobrepeso = (ffm > 30) ? true : false;
 
     console.log(bodyDensity);
     console.log(fatMass);
     console.log(ffm);
-
   }
 
 })

@@ -25,7 +25,7 @@ angular.module('bioimpedancia.bemVindoController', [])
       $http.post(URI + CLIENT_REGISTER, {
         "name": "BIA-App",
         "chipset": "Apple A10 Fusion",
-        "mac": "00:db:df:07:6d:13",
+        "mac": "c4:b3:01:b2:71:e8",
         "serial": "X0XX0X00X0X0",
         "processor": "Arm A10",
         "channel": "Wi-Fi",

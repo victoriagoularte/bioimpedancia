@@ -1,6 +1,6 @@
 angular.module('bioimpedancia.loginController', [])
 
-.controller('LoginController', function($scope, LoginService, $ionicPopup, $state) {
+.controller('LoginController', function($scope, LoginService, $ionicPopup, $state, $ionicHistory) {
     $scope.data = {username: "", password: ""};
 
     $scope.login = function(name, pw) {
@@ -10,9 +10,12 @@ angular.module('bioimpedancia.loginController', [])
             var alertPopup = $ionicPopup.alert({
                 title: 'ATENÇÃO!',
                 cssClass: 'popup-login',
-                template: 'Verifique se login ou senha estão corretos.',
-                templateUrl: '../../templates/popup-login.html'
+                template: '<p class="font-gray text-center tam16"> Verifique se o usuário e senha estão corretos. </p>'
             });
         });
+    }
+
+    $scope.voltar = function() {
+        $ionicHistory.goBack();
     }
 })

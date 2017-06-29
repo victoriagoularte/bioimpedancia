@@ -1,14 +1,16 @@
 angular.module('bioimpedancia.resultadoController', [])
 
-  .controller('ResultadoController', function ($scope, $state, $location, resultadoService) {
+  .controller('ResultadoController', function ($scope, $state, $location, $timeout, $templateCache, resultadoService) {
 
-    $scope.$on('$ionicView.loaded', function () {
-      //Number(resultadoService.dataObj.bodyDensity.replace(/[^0-9\.]+/g,""))
-    });
+    $scope.init = function(){
+      $templateCache.removeAll();
+      $scope.bodyDensity = "" + resultadoService.dataObj.bodyDensity;
+      $scope.fatMass = " " + resultadoService.dataObj.fatMass;
+      $scope.ffm = " " + resultadoService.dataObj.ffm;
+      $scope.sobrepeso = resultadoService.dataObj.sobrepeso;
+    }
 
-    $scope.bodyDensity = "" + resultadoService.dataObj.bodyDensity;
-    $scope.fatMass = " " + resultadoService.dataObj.fatMass;
-    $scope.ffm = " " + resultadoService.dataObj.ffm;
+    $timeout($scope.init)
 
     var responsiveOptions = [
     ['screen and (max-width: 640px)', {
@@ -158,7 +160,14 @@ angular.module('bioimpedancia.resultadoController', [])
       window.__exampleAnimateTimeout = setTimeout(chart.update.bind(chart), 12000);
     });
 
+    $scope.goToFormulario = function() {
+      resultadoService.dataObj.bodyDensity = '';
+      resultadoService.dataObj.fatMass = '';
+      resultadoService.dataObj.ffm = '';
+      resultadoService.dataObj.sobrepeso = false;
 
+      $state.go('formulario')
+    }
 
 
   });

@@ -16,7 +16,7 @@
                 <img data-ng-src="img/icone-branco.png" class="imagem-logo-slide">
             </div>    
             <div class="instrucao-slide text-align ">  
-                <span class="tam16 font-regular">Bem-vindo ao nosso tutorial!</span>
+                <span class="tam16 font-regular">SmartBIA! Simples, inteligente e rápido. Siga o nosso tutorial e descubra ;)</span>
             </div>
         </ion-slide>
 
@@ -25,7 +25,7 @@
                 <img data-ng-src="img/formulario-branco.png" class="imagem-formulario-slide">
             </div>
             <div class="instrucao-slide text-aling">  
-                <span class="tam16 font-regular">Preencha o formuládo do paciente.</span>
+                <span class="tam16 font-regular">Primeiro, preencha o formulário com os dados do paciente</span>
             </div> 
         </ion-slide>
 
@@ -34,7 +34,7 @@
                 <img data-ng-src="img/deitar-branco.png" class="imagem-deitar-slide">
             </div>
             <div class="instrucao-slide text-aling">  
-                <span class="tam16 font-regular">Deite o paciente em uma superfície plana</span>
+                <span class="tam16 font-regular">Posicione o paciente adequadamente em uma superfície plana</span>
             </div> 
         </ion-slide>
 
@@ -43,7 +43,24 @@
                 <img data-ng-src="img/eletrodos-branco2.png" class="imagem-eletrodo-slide">
             </div>    
             <div class="instrucao-slide text-aling">  
-                Cole os eletrodos na mão e pé direito para que possamos realizar a medição
+                Cole os eletrodos na mão e pé direito para que seja possível realizar as medidas necessárias
+            </div>    
+        </ion-slide>
+
+        <ion-slide>
+            <div class="text-center tam20">
+                 ATENÇÃO!
+            </div>
+            <div class="text-center recomendacao-tuto" >
+                <div class="text-center tam16">
+                    É recomendado que o paciente:<br><br>
+                    <div class="text-left">
+                        - não beba água antes do exame, e deve urinar antes antes de fazê-lo<br>
+                        - não realize atividades físicas em até 2 horas antes do exame<br>
+                        - não coma carne em até 3 horas<br><br>
+                    </div>    
+                    Caso contrário, poderá gerar resultados incoerentes
+                </div>
             </div>
         </ion-slide>
 
@@ -52,7 +69,7 @@
                 <img data-ng-src="img/click-branco.png" class="imagem-click-slide">
             </div>    
             <div class="instrucao-slide text-aling">  
-                Clique em calcular!
+                Cadastre os dados, e confira o resultado!
             </div>
         </ion-slide>
 
@@ -64,16 +81,17 @@
                 Pronto, agora estamos aptos a realizar medições!
             </div>
         </ion-slide>
+
         
     </ion-slide-box>
 
     <div class="avancar-btn-slide">
     
-            <div ng-if="slideIndex != 5">
+            <div ng-if="slideIndex != 6">
                 <button class="btn-avancar-slide" ng-click="goToAvancar()"><span class="font-regular">AVANÇAR</span></button>
             </div>
 
-            <div ng-if="slideIndex == 5">
+            <div ng-if="slideIndex == 6">
                 <button class="btn-avancar-slide" ng-click="goToVamosComecar()"><span class="font-regular">VAMOS COMEÇAR</span></button>
             </div>
     </div> 
