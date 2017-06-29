@@ -51,7 +51,7 @@ angular.module('bioimpedancia.formularioController', [])
     resultadoService.dataObj.bodyDensity = bodyDensity;
     resultadoService.dataObj.fatMass = fatMass;
     resultadoService.dataObj.ffm = ffm;
-    resultadoService.dataObj.sobrepeso = (ffm > 26) ? true : false;
+    resultadoService.dataObj.sobrepeso = (fatMass > 26) ? true : false;
 
     console.log(bodyDensity);
     console.log(fatMass);
@@ -71,7 +71,7 @@ angular.module('bioimpedancia.formularioController', [])
     resultadoService.dataObj.bodyDensity = bodyDensity;
     resultadoService.dataObj.fatMass = fatMass;
     resultadoService.dataObj.ffm = ffm;
-    resultadoService.dataObj.sobrepeso = (ffm > 30) ? true : false;
+    resultadoService.dataObj.sobrepeso = (fatMass > 30) ? true : false;
 
     console.log(bodyDensity);
     console.log(fatMass);
